@@ -6,10 +6,10 @@ namespace AdventOfCode.Year2018
         {
             var input = int.Parse(lines[0]);
             var powerLevels = GetPowerLevels(input);
-            var best = FindBest(powerLevels, 3);
+            var (x, y, _) = FindBest(powerLevels, 3);
 
             var expectedResult = "33,54";
-            var result = $"{best.x},{best.y}";
+            var result = $"{x},{y}";
             var pass = expectedResult == result ? "Pass" : "Fail";
             return $"{pass} - {result}";
         }
