@@ -1,4 +1,4 @@
-﻿using Helpers.Extensions;
+using Helpers.Extensions;
 
 namespace AdventOfCode.Year2020
 {
@@ -12,7 +12,7 @@ namespace AdventOfCode.Year2020
             var currentIndex = 0;
             var accumulatorValue = 0;
 
-            while(true)
+            while (true)
             {
                 if (visitedIndices.Contains(currentIndex))
                 {
@@ -24,7 +24,10 @@ namespace AdventOfCode.Year2020
                 (currentIndex, accumulatorValue) = RunInstruction(currentIndex, accumulatorValue, currentInstruction);
             }
 
-            return accumulatorValue;
+            var expectedResult = 1814;
+            var result = accumulatorValue;
+            var pass = expectedResult == result ? "Pass" : "Fail";
+            return $"{pass} - {result}";
         }
 
         public object HardSolution(IList<string> lines)
@@ -68,7 +71,10 @@ namespace AdventOfCode.Year2020
                 currentState = RunInstruction(currentState.Index, currentState.AccumulatorValue, currentInstruction);
             }
 
-            return currentState.AccumulatorValue;
+            var expectedResult = 1056;
+            var result = currentState.AccumulatorValue;
+            var pass = expectedResult == result ? "Pass" : "Fail";
+            return $"{pass} - {result}";
         }
 
         private static InstructionState RunInstruction(int currentIndex, int currentAccumulatorValue, Instruction instruction)

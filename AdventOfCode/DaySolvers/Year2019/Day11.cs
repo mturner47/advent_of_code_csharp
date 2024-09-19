@@ -1,6 +1,5 @@
 using AdventOfCode.DaySolvers.Year2019;
 using Helpers.Helpers;
-using Microsoft.Z3;
 
 namespace AdventOfCode.Year2019
 {

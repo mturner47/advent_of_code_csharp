@@ -77,6 +77,22 @@
             return GetAllMovements(includeDiagonals).Select(m => (x + m.x, y + m.y)).ToList();
         }
 
+        public static Direction ParseChar(char c)
+        {
+            return c switch
+            {
+                'N' => Direction.North,
+                'U' => Direction.North,
+                'W' => Direction.West,
+                'L' => Direction.West,
+                'E' => Direction.East,
+                'R' => Direction.East,
+                'S' => Direction.South,
+                'D' => Direction.South,
+                _ => throw new NotImplementedException(),
+            };
+        }
+
         public static Direction GetOpposite(this Direction d)
         {
             return d switch
