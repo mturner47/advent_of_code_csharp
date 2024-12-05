@@ -1,4 +1,4 @@
-﻿var yearToMake = 2020;
+﻿var yearToMake = 2024;
 
 GenerateNewYearFiles(yearToMake);
 
