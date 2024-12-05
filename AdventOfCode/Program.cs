@@ -7,8 +7,8 @@ static void TestThis()
     var today = DateTime.Today;
     new List<Problem>
     {
-        new (2020, 1, Difficulty.Easy),
-        new (2020, 1, Difficulty.Hard),
+        //new (2020, 1, Difficulty.Easy),
+        //new (2020, 1, Difficulty.Hard),
         //new (2020, 2, Difficulty.Easy),
         //new (2020, 2, Difficulty.Hard),
         //new (2020, 3, Difficulty.Easy),
@@ -45,8 +45,8 @@ static void TestThis()
         //new (2020, 18, Difficulty.Hard),
         //new (2020, 19, Difficulty.Easy),
         //new (2020, 19, Difficulty.Hard),
-        //new (2020, 20, Difficulty.Easy),
-        //new (2020, 20, Difficulty.Hard),
+        new (2020, 20, Difficulty.Easy),
+        new (2020, 20, Difficulty.Hard),
         //new (2020, 21, Difficulty.Easy),
         //new (2020, 21, Difficulty.Hard),
         //new (2020, 22, Difficulty.Easy),

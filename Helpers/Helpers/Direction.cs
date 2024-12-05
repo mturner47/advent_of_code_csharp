@@ -117,6 +117,18 @@
             };
         }
 
+        public static Direction Reverse(this Direction d)
+        {
+            return d switch
+            {
+                Direction.East => Direction.West,
+                Direction.West => Direction.East,
+                Direction.North => Direction.South,
+                Direction.South => Direction.North,
+                _ => throw new NotImplementedException(),
+            };
+        }
+
         public static Direction GetCCW(this Direction d)
         {
             return d switch
@@ -129,10 +141,10 @@
             };
         }
 
-        public static (int x, int y) GetMovement(this Direction direction, (int x, int y) currentPosition)
+        public static (int x, int y) GetMovement(this Direction direction, (int x, int y) currentPosition, int distanceMoved = 1)
         {
             var (x, y) = direction.GetMovement();
-            return (currentPosition.x + x, currentPosition.y + y);
+            return (currentPosition.x + (x * distanceMoved), currentPosition.y + (y * distanceMoved));
         }
 
         public static (long x, long y) GetMovement(this Direction direction, (long x, long y) currentPosition, long distanceMoved)

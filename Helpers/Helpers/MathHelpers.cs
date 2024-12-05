@@ -98,5 +98,28 @@
             }
             return combinations;
         }
+
+        public static long ChineseRemainderTheory(List<(long mod, long remainder)> modulos)
+        {
+            var fullProduct = modulos.Select(m => m.mod).Aggregate(1L, (a, b) => a * b);
+            var sum = modulos.Sum(m =>
+            {
+                var bigMod = fullProduct / m.mod;
+                var inverse = FindInverseMod(bigMod, m.mod);
+                return bigMod * inverse * m.remainder;
+            });
+            return sum % fullProduct;
+        }
+
+        private static long FindInverseMod(long bigMod, long mod)
+        {
+            bigMod %= mod;
+            var i = 1;
+            while (true)
+            {
+                if ((bigMod * i) % mod == 1) return i;
+                i++;
+            }
+        }
     }
 }
