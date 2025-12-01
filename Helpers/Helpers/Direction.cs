@@ -89,6 +89,10 @@
                 'R' => Direction.East,
                 'S' => Direction.South,
                 'D' => Direction.South,
+                '^' => Direction.North,
+                '>' => Direction.East,
+                'v' => Direction.South,
+                '<' => Direction.West,
                 _ => throw new NotImplementedException(),
             };
         }
@@ -151,6 +155,11 @@
         {
             var (x, y) = direction.GetMovement();
             return (currentPosition.x + x * distanceMoved, currentPosition.y + y * distanceMoved);
+        }
+
+        public static bool IsAdjacent((int x, int y) point1, (int x, int y) point2)
+        {
+            return GetAllMovements(point1).Contains(point2);
         }
     }
 }

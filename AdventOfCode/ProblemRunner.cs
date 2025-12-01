@@ -27,7 +27,7 @@ namespace AdventOfCode
 
         private static void GetMissingInputFile(Problem problem, string inputPath)
         {
-            var sourcePath = $"C:/Users/markr/home/code/csharp/AdventOfCode/AdventOfCode/Inputs/{problem.Year}/Day{problem.Day:00}.txt";
+            var sourcePath = $"../../../Inputs/{problem.Year}/Day{problem.Day:00}.txt";
             DownloadFileToSourceControl(problem, sourcePath);
             File.Copy(sourcePath, inputPath, true);
         }
@@ -63,7 +63,7 @@ namespace AdventOfCode
         public static IDaySolver GetDaySolver(Problem problem)
         {
             var assembly = Assembly.GetExecutingAssembly();
-            if (assembly.CreateInstance($"AdventOfCode.Year{problem.Year}.Day{problem.Day:00}") is not IDaySolver solver)
+            if (assembly.CreateInstance($"AdventOfCode.DaySolvers.Year{problem.Year}.Day{problem.Day:00}") is not IDaySolver solver)
             {
                 throw new NotImplementedException();
             }
