@@ -54,6 +54,28 @@
             return Math.Abs(p1.x - p2.x) + Math.Abs(p1.y - p2.y);
         }
 
+        public static double Get2dDistance((double x, double y) p1, (double x, double y) p2)
+        {
+            return Math.Sqrt(Math.Pow(p1.x - p2.x, 2) + Math.Pow(p1.y - p2.y, 2));
+        }
+
+        public static double Get3dDistance((double x, double y, double z) p1, (double x, double y, double z) p2)
+        {
+            return Math.Sqrt(Math.Pow(p1.x - p2.x, 2) + Math.Pow(p1.y - p2.y, 2) + Math.Pow(p1.z - p2.z, 2));
+        }
+
+        public static double GetNdDistance(List<double> p1, List<double> p2)
+        {
+            if (p1.Count != p2.Count) throw new Exception("Number of dimensions needs to be the same");
+
+            var sum = 0d;
+            for (var i = 0; i < p1.Count; i++)
+            {
+                sum += Math.Pow(p1[i] - p2[i], 2);
+            }
+            return Math.Sqrt(sum);
+        }
+
         public static List<List<T>> GetPermutations<T>(List<T> input) where T : notnull
         {
             if (input.Count == 0) throw new NotImplementedException();

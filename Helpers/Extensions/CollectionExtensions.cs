@@ -47,6 +47,18 @@
             }
         }
 
+        public static int Product(this IEnumerable<int> source)
+        {
+            ArgumentNullException.ThrowIfNull(source);
+            return source.Aggregate(1, (a, b) => a * b);
+        }
+
+        public static double Product(this IEnumerable<double> source)
+        {
+            ArgumentNullException.ThrowIfNull(source);
+            return source.Aggregate(1d, (a, b) => a * b);
+        }
+
         public static TValue? GetNullableValue<TKey, TValue>(this IDictionary<TKey, TValue> dict, TKey key) where TValue : struct
         {
             if (dict == null) return null;

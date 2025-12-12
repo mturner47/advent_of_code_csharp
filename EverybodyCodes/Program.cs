@@ -1,4 +1,4 @@
-﻿using AdventOfCode;
+﻿using EverybodyCodes;
 
 TestThis();
 
@@ -7,8 +7,9 @@ static void TestThis()
     var today = DateTime.Today;
     new List<Problem>
     {
-        //new (2025, 12, Difficulty.Easy),
-        //new (2025, 12, Difficulty.Hard),
+        //new (2024, 2, Part.One),
+        //new (2024, 2, Part.Two),
+        new (2024, 2, Part.Three),
     }.Select(ProblemRunner.GetSolution)
     .ToList()
     .ForEach(Console.WriteLine);

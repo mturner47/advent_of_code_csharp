@@ -1,4 +1,4 @@
-namespace AdventOfCode.Year{Year}
+namespace AdventOfCode.DaySolvers.Year{Year}
 {
     internal class Day{Day} : IDaySolver
     {

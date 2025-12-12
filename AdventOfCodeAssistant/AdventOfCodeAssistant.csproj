@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\.editorconfig" Link=".editorconfig" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="DayTemplate.cs.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

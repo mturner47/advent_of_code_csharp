@@ -1,10 +1,10 @@
-﻿var yearToMake = 2024;
+﻿var yearToMake = 2025;
 
 GenerateNewYearFiles(yearToMake);
 
 static void GenerateNewYearFiles(int year)
 {
-    var basePath = "C:\\Users\\markr\\home\\code\\csharp\\AdventOfCode\\AdventOfCode";
+    var basePath = @"C:/code/csharp/AdventOfCode/AdventOfCode";
     var codeFolderPath = Path.Combine(basePath, "DaySolvers", $"Year{year}");
     var inputFolderPath = Path.Combine(basePath, "Inputs", $"{year}");
     Directory.CreateDirectory(codeFolderPath);
